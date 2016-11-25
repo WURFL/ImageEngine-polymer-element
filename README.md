@@ -1,6 +1,6 @@
 # Polymer element for ImageEngine
 
-ImageEngine
+[https://www.scientiamobile.com/page/imageengine] ImageEngine
 
 ImageEngine is an intelligent image CDN for optimizing, compressing and resizing images. ImageEngine will enhance your responsive images by enabling support for HTTP2, automatic webp conversion, Client Hints and more.
 
@@ -27,6 +27,16 @@ WebP is a lightweigh image format with great quality. WebP is well supported by 
 ## Using image-engine in your polymer project
 
 
+1. `bower install imageengine-polymer  --save`
+   * `After installation as one time configuration you have to go to bower_componentsimageengine-polymer/image-engine.html` and replace token value from "try" to your token value.
+   * Go to [https://www.scientiamobile.com/page/imageengine](https://www.scientiamobile.com/page/imageengine) to know more about getting your own ImageEngine token.
+
+2. import `path_to_your_bower_components/imageengine-polymer/image-engine.html`
+
+3. use element as `<imageengine-polymer imagesrc="https://yourhostedimage.jpg" https=true width="" height="" ></imageengine-polymer>`
+     * note that if your image(s) use https , make sure you set https=true param while calling the element,if you are not using height and width options of ImageEngine assign them to an empty string (image(s) will take default width and height).
+
+     * imagesrc is a mandatory param/property for this polymer element .
 
 
 
