@@ -1,0 +1,76 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+
+<dom-module id="image-engine">
+
+
+  <template>
+
+    <style>
+      /* local DOM styles go here */
+      :host {
+        display: inline-block;
+      }
+    </style>
+     
+     [[prepareUrl(imagesrc,https,height,width)]]
+    <!-- local DOM goes here -->
+     <img src="[[finalImageUrl]]">
+  </template>
+
+  <script>
+  Polymer({
+    is: 'image-engine',
+    finalImageUrl:String,
+    imagesrc:String,
+    token: {
+      type:String,
+      value:'omed'
+    },
+    
+    https:{
+      type:Boolean,
+      value:false
+    },
+    isLite:{
+      type:Boolean,
+      value:true
+    },
+    height:{
+      type:String,
+      value:null
+    },
+    width:{
+      type:String,
+      value:null
+    },
+    prepareUrl: function(imagesrc,isHttps=false,height=0,width=0) {
+       
+        var constructedUrl = "";
+        if(isHttps){
+            constructedUrl = "https://"+this.token.value+".imgeng.in/";
+        }else{
+          constructedUrl = "http://"+this.token.value+".imgeng.in/";
+        }
+        if(height){
+          constructedUrl = constructedUrl + "h_"+Number(height)+"/";
+        } 
+
+        if(width){
+          constructedUrl = constructedUrl + "w_"+Number(height)+"/";
+        }
+        constructedUrl = constructedUrl + imagesrc;
+       
+        this.finalImageUrl = constructedUrl;
+        
+    }
+    
+
+
+
+
+  });
+  </script>
+
+</dom-module>
+
