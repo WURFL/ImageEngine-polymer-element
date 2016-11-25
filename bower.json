@@ -1,6 +1,7 @@
 {
   "name": "imageengine-polymer",
-  "version": "0.0.2",
+   "description":"Resusable ImageEngine polymer element ",
+  "version": "1.0",
   "homepage": "https://github.com/Polymer/element-tutorial",
   "license": "MIT",
   "ignore": [
